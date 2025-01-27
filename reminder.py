@@ -53,9 +53,7 @@ def _find_match(target: str, task_list):
         if score >= 0.9:
             potential_match.append((score, task.name))
     if potential_match:
-        potential_match = sorted(potential_match,
-                                 key=lambda x: x[0],
-                                 reverse=True)
+        potential_match = sorted(potential_match, key=lambda x: x[0], reverse=True)
         click.echo(f"Cannot find {target}, here are the close matches:")
         for num, match in enumerate(potential_match):
             click.echo(f"{num+1}. {match[1]}")
